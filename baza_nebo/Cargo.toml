@@ -1,0 +1,43 @@
+[package]
+edition = "2024"
+name = "baza_nebo"
+version = "0.1.7"
+# 0.1.7 - удалено чтение xml не в gz 
+# 0.1.6 - добавлено чтение как из gz, так и из незаархивированного файла
+# 0.1.5 - хранение файлов в gz и чтение файлов из gz
+# 0.1.4 - повышение версии для проверки деплоя
+# 0.1.0 - initial
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+# https://docs.rs/built/0.7.5/built/index.html
+build = "build.rs"
+
+[build-dependencies]
+built = "0.7"
+
+[dependencies]
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true, features = ["env-filter"]}
+tokio = { workspace = true, features = ["full"] }
+dotenv = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+common_macros4 = { path = "../common_macros4" }
+arrange_millis = { path = "../arrange_millis" }
+paste = { workspace = true }
+futures = { workspace = true }
+op_mode = { workspace = true }
+config = { workspace = true }
+lazy_static = { workspace = true }
+strum = { workspace = true, features = ["derive"] }
+serde = { workspace = true, features = ["derive", "rc"] }
+serde_json = { workspace = true }
+uuid = { workspace = true, features = ["v4", "serde"] }
+serde_yml = { workspace = true }
+axum = { version = "0.7", features = ["tracing", "macros", "multipart", "ws", "json" ] }
+tower-http = { version = "0.6", features = ["fs", "trace"] }
+quick-xml = "0.37"
+chrono = { workspace = true }
+flate2 = "1.1.1"

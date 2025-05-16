@@ -1,0 +1,41 @@
+
+data_root = "data"
+
+list_respite_millis = 11945
+card_respite_millis = 12520
+ipify_respite_millis = 12520
+
+# webdriver = "http://localhost:4444"
+user_agent = "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, как Gecko) Chrome/106.0.5249.79 Mobile Safari/537.36"
+connect_timeout_millis = 12520
+recovery_millis = 12520
+try_limit = 3
+ipify_url = "TESTipify"
+page_limit = 50
+page_count_max = 100
+
+[db]
+url="postgres://mirror_avito:TEST@TEST/mirror_avito"
+connection_max_count=26
+live_for_secs=20
+acquire_timeout_secs=120 # это 2 минуты
+
+[dip]
+worker_name = "process-source-wcrawler"
+queue = "process-source-wcrawler"
+queue_check = "send-mirror-avito"
+url = "amqp://stable-dip:TEST@stable-dip-queue0.baza-winner.ru/%2f"
+url_alpha = "amqp://alpha-dip:TEST@alpha-dip-queue0.baza-winner.ru/%2f"
+url_export = "TEST"
+
+[avito]
+key = "af0deccbgcgidddjgnvljitntccdduijhdinfgjgfjir"
+# list_api = 11
+list_api = 1
+card_api = 17
+# host = "m.avito.ru"
+host = "www.avito.ru"
+context = "H4sIAAAAAAAAA0u0MrSqLraysFJKK8rPDUhMT1WyLrYyNLNSKk5NLErOcMsvyg3PTElPLVGyrgUAF_yIfi0AAAA"
+diap_page_try_count_limit = 3
+diap_page_try_delay_millis = 12520
+page_num_max = 100
