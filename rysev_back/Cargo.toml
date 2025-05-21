@@ -1,0 +1,60 @@
+#cargo-features = ["edition2021"]
+
+[package]
+name = "rysev_back"
+version = "0.3.1"
+# 0.3.1: выставляем признак "вторичка" всем объявлениям Циана, для которых он не определен
+# 0.3.0: запись Habit и Cottage в один файл
+# 0.2.0: изменение типа ElasticContentSharedInnerSpecific
+# 0.1.2: работа с адресами вынесена в отдельные файлы
+# 0.1.1: set CSV delimeter to ';'
+# 0.1.0: initial commit
+authors = ["Yury Bikuzin <yury.bikuzin@gmail.com>"]
+edition = "2021"
+build = "build.rs"
+
+[build-dependencies]
+built = "0.6"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+debug = []
+
+[dependencies]
+log = "0.4"
+anyhow = "1"
+tokio = { version = "1", features = ["full"] }
+dotenv = "0.15"
+pretty_env_logger = "0.5"
+structopt = { version = "0.3" }
+futures = { version = "0.3" }
+openssl = { version = "0.10", features = ["vendored"] }
+lazy_static = "1"
+regex = "1"
+strum = { version = "0.25", features = ["derive"] }
+paste = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = "0.4"
+chrono-tz = "0.8"
+common_macros2 = { path = "../common_macros2" }
+arrange_millis = { path = "../arrange_millis" }
+elastic_scan = { path = "../elastic_scan" }
+mls_facet = { path = "../mls_facet" }
+json = { path = "../json" }
+config = "0.13"
+warp = "0.3"
+thiserror = "1"
+reqwest = { version = "0.11", features = ["json", "gzip", "cookies", "multipart"] }
+http = "0.2"
+humantime = "2"
+csv = "1"
+op_mode = { path = "../op_mode" }
+flate2 = "^1"
+const_format = "^0.2"
+base64 = "0.13"
+
+[dev-dependencies]
+test_helper = { path = "../test_helper" }
+pretty_assertions = "1"

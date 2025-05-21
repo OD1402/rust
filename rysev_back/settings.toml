@@ -1,0 +1,13 @@
+[elastic]
+max_at_once=2
+host="http://elastic:TEST@TEST:53101"
+
+fetch_limit=500
+scroll_timeout_secs=30
+
+error_timeout_secs=600
+
+[store]
+bunches_to_save_max_len=2
+
+
