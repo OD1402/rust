@@ -40,7 +40,7 @@ pub async fn adv(Query(params): Query<QueryFilter>) -> impl IntoResponse {
 
     let mut url = "http://stable-mls-search2.baza-winner.ru:9200/msk_commre_advs_v1/_search?";
     if params.region == Region::Spb || params.region == Region::Lo {
-        url = "http://elastic:wRtC3jqdQM@v9z.ru:53101/rgn_commre_advs_v1/_search?";
+        url = "http://elastic:TEST@TEST:53101/rgn_commre_advs_v1/_search?";
     }
 
     let geo_base_spot_code: Vec<&str> = match params.region {
