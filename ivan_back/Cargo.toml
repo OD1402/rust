@@ -1,0 +1,33 @@
+[package]
+edition = "2021"
+name = "ivan_back"
+version = "1.0.0"
+# 1.0.0 - сделано всё
+# 0.1.0 - initial
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# https://docs.rs/built/0.7.5/built/index.html
+build = "build.rs"
+
+[build-dependencies]
+built = "0.7"
+
+[dependencies]
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true, features = ["env-filter"]}
+tokio = { workspace = true, features = ["full"] }
+dotenv = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+common_macros4 = { path = "../common_macros4" }
+paste = { workspace = true }
+op_mode = { workspace = true }
+config = { workspace = true }
+lazy_static = { workspace = true }
+serde = { workspace = true, features = ["derive", "rc"] }
+serde_json = { workspace = true }
+axum = { version = "0.7", features = ["tracing", "macros", "multipart", "ws", "json" ] }
+tower-http = { version = "0.6", features = ["fs", "trace"] }
+reqwest = { version = "0.11", features = ["json"] }
+openssl = { version = "0.10", features = ["vendored"] }
